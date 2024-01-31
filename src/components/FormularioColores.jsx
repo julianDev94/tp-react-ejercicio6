@@ -1,25 +1,24 @@
+import { Button } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 
 const FormularioColores = () => {
   return (
-    <section>
+    <section className="mt-4 shadow-lg p-2 rounded">
       <h4>Administrar colores</h4>
-      <Form>
-        <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+      <Form className="mt-4">
+        <Form.Group className="mb-3 d-flex bg-info p-3">
           <Form.Control
             type="color"
-            id="exampleColorInput"
+            size="lg"
+            id="inputColor"
             defaultValue="#563d7c"
-            title="Choose your color"
+            title="Cambia tu color"
           />
-          <Form.Label>Email address</Form.Label>
-          <Form.Control type="email" placeholder="name@example.com" />
+          <Form.Control type="text" className="ms-3" placeholder="Ingrese un color ej Blue" minLength={3} maxLength={30} />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-          <Form.Label>Example textarea</Form.Label>
-          <Form.Control as="textarea" rows={3} />
-        </Form.Group>
+        <Button variant="primary" type="submit" >Guardar</Button>
       </Form>
+
     </section>
   );
 };
