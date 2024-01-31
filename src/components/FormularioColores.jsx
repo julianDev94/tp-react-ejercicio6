@@ -1,13 +1,24 @@
 import { Button } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import CardColor from "./CardColor";
+import { useState } from "react";
 
 const FormularioColores = () => {
+  const [nombreColor, setNombreColor] = useState("");
+  const [colores, setColores] = useState([]);
+
+  const handlerSubmit = (e) => {
+    e.preventDefault();
+    console.log("dentro del evento submit");
+    setColores([...colores,nombreColor]);
+    setNombreColor('');
+  };
+
   return (
     <>
       <section className="mt-4 shadow-lg p-2 rounded">
         <h4>Administrar colores</h4>
-        <Form className="mt-4">
+        <Form className="mt-4" onSubmit={handlerSubmit}>
           <Form.Group className="mb-3 d-flex bg-info p-3">
             <Form.Control
               type="color"
@@ -22,6 +33,8 @@ const FormularioColores = () => {
               placeholder="Ingrese un color ej Blue"
               minLength={3}
               maxLength={30}
+              onChange={(e) => setNombreColor(e.target.value.trim())}
+              value={nombreColor}
             />
           </Form.Group>
           <Button variant="primary" type="submit">
@@ -30,7 +43,7 @@ const FormularioColores = () => {
         </Form>
       </section>
       <section className="my-3">
-        <CardColor/>
+        <CardColor />
       </section>
     </>
   );
