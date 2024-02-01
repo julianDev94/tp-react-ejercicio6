@@ -5,13 +5,16 @@ import { useState } from "react";
 
 const FormularioColores = () => {
   const [nombreColor, setNombreColor] = useState("");
-  const [colores, setColores] = useState([]);
+  const [nombreColores, setNombreColores] = useState([]);
+  const [codigoColor, setCodigoColor] = useState("");
+
 
   const handlerSubmit = (e) => {
     e.preventDefault();
     console.log("dentro del evento submit");
-    setColores([...colores,nombreColor]);
+    setNombreColores([...nombreColores,nombreColor]);
     setNombreColor('');
+    setCodigoColor('');
   };
 
   return (
@@ -24,8 +27,9 @@ const FormularioColores = () => {
               type="color"
               size="lg"
               id="inputColor"
-              defaultValue="#563d7c"
               title="Cambia tu color"
+              onChange={(e)=>setCodigoColor(e.target.value)}
+              value={codigoColor}
             />
             <Form.Control
               type="text"
@@ -42,8 +46,8 @@ const FormularioColores = () => {
           </Button>
         </Form>
       </section>
-      <section className="my-3">
-        <CardColor />
+      <section className="my-3 d-flex">
+        <CardColor nombreColores={nombreColores}  />
       </section>
     </>
   );
