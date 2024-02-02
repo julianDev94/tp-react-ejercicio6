@@ -5,16 +5,14 @@ import { useState } from "react";
 
 const FormularioColores = () => {
   const [nombreColor, setNombreColor] = useState("");
-  const [nombreColores, setNombreColores] = useState([]);
-  const [codigoColor, setCodigoColor] = useState("");
-
+  const [codigoColor, setCodigoColor] = useState("#ffffff");
+  const [colores, setColores] = useState([]);
 
   const handlerSubmit = (e) => {
     e.preventDefault();
     console.log("dentro del evento submit");
-    setNombreColores([...nombreColores,nombreColor]);
+    setColores([...colores,nombreColor]);
     setNombreColor('');
-    setCodigoColor('');
   };
 
   return (
@@ -47,7 +45,7 @@ const FormularioColores = () => {
         </Form>
       </section>
       <section className="my-3 d-flex">
-        <CardColor nombreColores={nombreColores}  />
+        <CardColor colores={colores}/>
       </section>
     </>
   );
