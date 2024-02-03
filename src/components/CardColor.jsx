@@ -1,12 +1,18 @@
-import { Button, Card, Row, Col } from "react-bootstrap";
+import { Button, Card,Form } from "react-bootstrap";
 
 const CardColor = ({ color }) => {
   return (
-    <Card id="card" className="mb-2 shadow-lg mx-3">
-      <Card.Header>{color.nombre}</Card.Header>
-      <Card.Body>
-        <Card.Text>{color.codigo}</Card.Text>
-        <Button variant="danger">Borrar</Button>
+    <Card id="card" className="mb-2 shadow-lg mx-3 text-center">
+      <Card.Header className="fs-4 fw-bold">{color.nombre}</Card.Header>
+      <Card.Body className="d-flex flex-column align-items-center">
+      <Form.Control
+              type="color"
+              size="lg"
+              id="inputColor"
+              title="Cambia tu color"
+              defaultValue={color.codigo}
+            />
+        <Button variant="danger" className="mt-3">Borrar</Button>
       </Card.Body>
     </Card>
   );
