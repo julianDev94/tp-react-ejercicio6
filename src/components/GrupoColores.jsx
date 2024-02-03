@@ -5,7 +5,7 @@ import CardColor from "./CardColor";
 const GrupoColores = ({colores}) => {
     return (
         <CardGroup>
-            {colores.map((color)=><CardColor color={color}/>)}
+            {colores.map((color, posicionColor)=><CardColor key={posicionColor} color={color}/>)}
         </CardGroup>
     );
 };
