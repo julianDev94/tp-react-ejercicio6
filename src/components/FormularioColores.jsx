@@ -1,11 +1,15 @@
 import { Button, Form } from "react-bootstrap";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import GrupoColores from "./GrupoColores";
 
 const FormularioColores = () => {
   const [nombreColor, setNombreColor] = useState("");
   const [codigoColor, setCodigoColor] = useState("#ffffff");
-  const [colores, setColores] = useState([]);
+  const [colores, setColores] = useState(JSON.parse(localStorage.getItem('coloresKey')) || []);
+
+useEffect(()=>{
+  localStorage.setItem('coloresKey', JSON.stringify(colores));
+}, [colores]);
 
   const handlerSubmit = (e) => {
     e.preventDefault();
