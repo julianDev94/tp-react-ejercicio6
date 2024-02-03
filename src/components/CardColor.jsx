@@ -4,7 +4,7 @@ const CardColor = ({ color }) => {
   return (
     <Card id="card" className="mb-2 shadow-lg mx-3 text-center">
       <Card.Header className="fs-4 fw-bold">{color.nombre}</Card.Header>
-      <Card.Body className="d-flex flex-column align-items-center">
+      <Card.Body className="d-flex flex-column align-items-center bg-info">
       <Form.Control
               type="color"
               size="lg"
