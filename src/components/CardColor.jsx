@@ -1,8 +1,8 @@
 import { Button, Card, Row, Col } from "react-bootstrap";
 
-const CardColor = ({ colores }) => {
+const CardColor = ({color}) => {
   return (
-    colores.map((color) => (
+    
       <Card id="card" className="mb-2 shadow-lg mx-3">
         <Card.Header>{color}</Card.Header>
         <Card.Body>
@@ -10,7 +10,7 @@ const CardColor = ({ colores }) => {
           <Button variant="danger">Borrar</Button>
         </Card.Body>
       </Card>
-    ))
+  
   );
 
 };

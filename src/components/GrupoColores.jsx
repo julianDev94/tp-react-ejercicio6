@@ -1,10 +1,11 @@
 import { CardGroup } from "react-bootstrap"
+import CardColor from "./CardColor";
 
 
-const GrupoColores = () => {
+const GrupoColores = ({colores}) => {
     return (
         <CardGroup>
-            
+            {colores.map((color)=><CardColor color={color}/>)}
         </CardGroup>
     );
 };

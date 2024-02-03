@@ -2,6 +2,7 @@ import { Button } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import CardColor from "./CardColor";
 import { useState } from "react";
+import GrupoColores from "./GrupoColores";
 
 const FormularioColores = () => {
   const [nombreColor, setNombreColor] = useState("");
@@ -45,7 +46,7 @@ const FormularioColores = () => {
         </Form>
       </section>
       <section className="my-3 d-flex">
-        <CardColor colores={colores}/>
+        <GrupoColores colores={colores}/>
       </section>
     </>
   );
