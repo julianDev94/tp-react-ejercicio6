@@ -2,7 +2,7 @@ import { Button, Card,Form } from "react-bootstrap";
 
 const CardColor = ({ color }) => {
   return (
-    <Card id="card" className="mb-2 shadow-lg mx-3 text-center">
+    <Card id="card" className="mb-2 shadow-lg mx-3 text-center shadow-lg">
       <Card.Header className="fs-4 fw-bold">{color.nombre}</Card.Header>
       <Card.Body className="d-flex flex-column align-items-center bg-info">
       <Form.Control
