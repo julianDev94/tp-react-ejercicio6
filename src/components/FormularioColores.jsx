@@ -5,12 +5,10 @@ import GrupoColores from "./GrupoColores";
 const FormularioColores = () => {
   const [nombreColor, setNombreColor] = useState("");
   const [codigoColor, setCodigoColor] = useState("#ffffff");
-  // const [color, setColor] = useState({nombre:"", codigo:""});
   const [colores, setColores] = useState([]);
 
   const handlerSubmit = (e) => {
     e.preventDefault();
-    console.log("dentro del evento submit");
     const color={
       nombre: nombreColor,
       codigo: codigoColor
