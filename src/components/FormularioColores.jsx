@@ -1,19 +1,22 @@
-import { Button } from "react-bootstrap";
-import Form from "react-bootstrap/Form";
-import CardColor from "./CardColor";
+import { Button, Form } from "react-bootstrap";
 import { useState } from "react";
 import GrupoColores from "./GrupoColores";
 
 const FormularioColores = () => {
   const [nombreColor, setNombreColor] = useState("");
   const [codigoColor, setCodigoColor] = useState("#ffffff");
+  // const [color, setColor] = useState({nombre:"", codigo:""});
   const [colores, setColores] = useState([]);
 
   const handlerSubmit = (e) => {
     e.preventDefault();
     console.log("dentro del evento submit");
-    setColores([...colores,nombreColor]);
-    setNombreColor('');
+    const color={
+      nombre: nombreColor,
+      codigo: codigoColor
+    }
+    setColores([...colores, color]);
+    setNombreColor("");
   };
 
   return (
@@ -27,7 +30,7 @@ const FormularioColores = () => {
               size="lg"
               id="inputColor"
               title="Cambia tu color"
-              onChange={(e)=>setCodigoColor(e.target.value)}
+              onChange={(e) => setCodigoColor(e.target.value)}
               value={codigoColor}
             />
             <Form.Control
@@ -46,7 +49,7 @@ const FormularioColores = () => {
         </Form>
       </section>
       <section className="my-3 d-flex">
-        <GrupoColores colores={colores}/>
+        <GrupoColores colores={colores} />
       </section>
     </>
   );
